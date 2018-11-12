@@ -48,6 +48,7 @@ define([
         //  'config' will be the configuration property object
         updateView: function(data, config) {
             console.log("ok");
+            console.log(this.getPropertyNamespaceInfo().propertyNamespace);
             // Draw something here
         var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'];
         console.log(file);
