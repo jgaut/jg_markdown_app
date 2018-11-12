@@ -1,0 +1,5 @@
+local/
+metadata/local.meta
+appserver/static/visualizations/jg_markdown/node_modules/
+appserver/static/visualizations/jg_markdown/visualization.js
+appserver/static/visualizations/jg_markdown/package-lock.json
