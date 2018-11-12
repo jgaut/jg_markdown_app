@@ -39,3 +39,14 @@ export = system
 # Un-comment the stanza below to make the standin visualization available to all apps.
 [visualizations/jg_markdown]
 export = system
+[app/ui]
+version = 7.2.0
+modtime = 1542023578.460771000
+
+[app/launcher]
+version = 7.2.0
+modtime = 1542023578.468523000
+
+[app/package/check_for_updates]
+version = 7.2.0
+modtime = 1542023578.470959000
