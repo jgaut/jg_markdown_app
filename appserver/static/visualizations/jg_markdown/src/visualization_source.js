@@ -49,7 +49,9 @@ define([
         updateView: function(data, config) {
             
             // Draw something here
-
+        var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'];
+        console.log(file);
+        
         },
 
         // Search data params
