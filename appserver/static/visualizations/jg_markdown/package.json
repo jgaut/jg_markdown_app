@@ -1,0 +1,21 @@
+{
+  "name": "jg_markdown",
+  "version": "1.0.0",
+  "description": "Markdown visualization app.",
+  "main": "visualization.js",
+  "scripts": {
+    "build": "$SPLUNK_HOME/bin/splunk cmd node ./node_modules/webpack/bin/webpack.js",
+    "devbuild": "$SPLUNK_HOME/bin/splunk cmd node ./node_modules/webpack/bin/webpack.js --progress",
+    "watch": "$SPLUNK_HOME/bin/splunk cmd node ./node_modules/webpack/bin/webpack.js -d --watch --progress"
+  },
+  "author": "Splunk",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^1.12.6"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "underscore": "^1.9.1",
+    "showdown": "^1.9.0"
+  }
+}
