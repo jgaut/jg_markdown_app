@@ -21,12 +21,12 @@ define([
     return SplunkVisualizationBase.extend({
   
         initialize: function() {
-            SplunkVisualizationBase.prototype.initialize.apply(this, arguments);
+        SplunkVisualizationBase.prototype.initialize.apply(this, arguments);
 	    $el = $(this.el);
 	    $.get( window.location.origin + "/static/app/jg_markdown_app/README.md", function( data ) {
-            	var converter = new showdown.Converter();
+          	var converter = new showdown.Converter();
 	        converter.setFlavor('github');
-                var html = converter.makeHtml(data);
+            var html = converter.makeHtml(data);
            	$el.empty();
 	        $el.append(html);
 	    });
