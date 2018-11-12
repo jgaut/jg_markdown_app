@@ -22,7 +22,6 @@ define([
   
         initialize: function() {
         SplunkVisualizationBase.prototype.initialize.apply(this, arguments);
-	    do_markdown();
 
             // Initialization logic goes here
         },
@@ -42,7 +41,16 @@ define([
         updateView: function(data, config) {
             // Draw something here
         
-        do_markdown()
+        $el = $(this.el);
+        var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'];
+        var app = config[this.getPropertyNamespaceInfo().propertyNamespace + 'app'];
+        $.get( window.location.origin + "/static/app/" + app + "/" + file, function( data ) {
+            var converter = new showdown.Converter();
+            converter.setFlavor('github');
+            var html = converter.makeHtml(data);
+            $el.empty();
+            $el.append(html);
+        });
 
         },
 
@@ -57,17 +65,5 @@ define([
         // Override to respond to re-sizing events
         reflow: function() {}
     });
-    
-    function do_markdown(){
-        $el = $(this.el);
-        var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'];
-        var app = config[this.getPropertyNamespaceInfo().propertyNamespace + 'app'];
-        $.get( window.location.origin + "/static/app/" + app + "/" + file, function( data ) {
-            var converter = new showdown.Converter();
-            converter.setFlavor('github');
-            var html = converter.makeHtml(data);
-            $el.empty();
-            $el.append(html);
-        });
-    }
+
 });
