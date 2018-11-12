@@ -22,14 +22,7 @@ define([
   
         initialize: function() {
         SplunkVisualizationBase.prototype.initialize.apply(this, arguments);
-	    $el = $(this.el);
-	    $.get( window.location.origin + "/static/app/jg_markdown_app/README.md", function( data ) {
-          	var converter = new showdown.Converter();
-	        converter.setFlavor('github');
-            var html = converter.makeHtml(data);
-           	$el.empty();
-	        $el.append(html);
-	    });
+	    do_markdown();
 
             // Initialization logic goes here
         },
@@ -48,8 +41,8 @@ define([
         //  'config' will be the configuration property object
         updateView: function(data, config) {
             // Draw something here
-        var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'];
-        console.log(file);
+        
+        do_markdown()
 
         },
 
@@ -64,4 +57,17 @@ define([
         // Override to respond to re-sizing events
         reflow: function() {}
     });
+    
+    function do_markdown(){
+        $el = $(this.el);
+        var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'];
+        var app = config[this.getPropertyNamespaceInfo().propertyNamespace + 'app'];
+        $.get( window.location.origin + "/static/app/" + app + "/" + file, function( data ) {
+            var converter = new showdown.Converter();
+            converter.setFlavor('github');
+            var html = converter.makeHtml(data);
+            $el.empty();
+            $el.append(html);
+        });
+    }
 });
