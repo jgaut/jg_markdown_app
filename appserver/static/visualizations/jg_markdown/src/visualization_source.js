@@ -60,7 +60,7 @@ define([
             $el.removeClass("scroll");
             $el.removeClass("markdown-body");
 
-            el.addClass("overflow-y");
+            $el.addClass("overflow-y");
             $el.addClass("scroll");
             $el.addClass("markdown-body"); //https://github.com/sindresorhus/github-markdown-css
         });
