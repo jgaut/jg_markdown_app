@@ -49,6 +49,7 @@ define([
             converter.setFlavor('github');
             var html = converter.makeHtml(data);
             $el.empty();
+            console.log("add html to div");
             $el.append(html);
         });
 
