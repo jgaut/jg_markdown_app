@@ -20,6 +20,10 @@ Refresh your Splunk instance : https://My_Splunk_Instance:My_Splunk_Instance_Por
 
 ## Dev tools
 
+```shell
+git pull && cd appserver/static/visualizations/jg_markdown/ && git run build && cd ../../../..
+```
+
 ## Tools tiers
 
 | Name | Description |
