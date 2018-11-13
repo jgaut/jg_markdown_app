@@ -42,8 +42,17 @@ define([
             // Draw something here
         
         $el = $(this.el);
+        
+        $el.empty();
+        
+        $el.removeClass("overflow-y");
+        $el.removeClass("scroll");
         $el.removeClass("markdown-body");
+
+        el.addClass("overflow-y");
+        $el.addClass("scroll");
         $el.addClass("markdown-body"); //https://github.com/sindresorhus/github-markdown-css
+        
         var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'] || 'README.md';
         var app = config[this.getPropertyNamespaceInfo().propertyNamespace + 'app'] || 'jg_markdown_app';
         $.get( window.location.origin + "/static/app/" + app + "/" + file, function( data ) {
