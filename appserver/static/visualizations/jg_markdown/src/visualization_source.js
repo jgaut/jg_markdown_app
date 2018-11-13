@@ -42,13 +42,13 @@ define([
             // Draw something here
         
         $el = $(this.el);
-        $el.empty();
         var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'] || 'README.md';
         var app = config[this.getPropertyNamespaceInfo().propertyNamespace + 'app'] || 'jg_markdown_app';
         $.get( window.location.origin + "/static/app/" + app + "/" + file, function( data ) {
             var converter = new showdown.Converter();
             converter.setFlavor('github');
             var html = converter.makeHtml(data);
+            $el.empty();
             $el.append(html);
         });
 
