@@ -56,13 +56,8 @@ define([
             
             $el.append(html);
             
-            $el.removeClass("overflow-y");
-            $el.removeClass("scroll");
-            $el.removeClass("markdown-body");
-
             $el.addClass("markdown-body"); //https://github.com/sindresorhus/github-markdown-css
-            $el.addClass("overflow-y");
-            $el.addClass("scroll");
+            $el.css("overflow-y", "auto");
         });
 
         },
