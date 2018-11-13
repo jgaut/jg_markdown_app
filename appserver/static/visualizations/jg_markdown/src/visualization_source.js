@@ -43,15 +43,7 @@ define([
         
         $el = $(this.el);
         
-        $el.empty();
-        
-        $el.removeClass("overflow-y");
-        $el.removeClass("scroll");
-        $el.removeClass("markdown-body");
 
-        el.addClass("overflow-y");
-        $el.addClass("scroll");
-        $el.addClass("markdown-body"); //https://github.com/sindresorhus/github-markdown-css
         
         var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'] || 'README.md';
         var app = config[this.getPropertyNamespaceInfo().propertyNamespace + 'app'] || 'jg_markdown_app';
@@ -61,7 +53,16 @@ define([
             var html = converter.makeHtml(data);
             $el.empty();
             console.log("add html to div");
+            
             $el.append(html);
+            
+            $el.removeClass("overflow-y");
+            $el.removeClass("scroll");
+            $el.removeClass("markdown-body");
+
+            el.addClass("overflow-y");
+            $el.addClass("scroll");
+            $el.addClass("markdown-body"); //https://github.com/sindresorhus/github-markdown-css
         });
 
         },
