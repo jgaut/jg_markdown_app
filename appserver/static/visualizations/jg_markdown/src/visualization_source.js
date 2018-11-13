@@ -42,8 +42,8 @@ define([
             // Draw something here
         
         $el = $(this.el);
-        $el.removeClass("markdown");
-        $el.addClass("markdown");
+        $el.removeClass("markdown-body");
+        $el.addClass("markdown-body");
         var file = config[this.getPropertyNamespaceInfo().propertyNamespace + 'file'] || 'README.md';
         var app = config[this.getPropertyNamespaceInfo().propertyNamespace + 'app'] || 'jg_markdown_app';
         $.get( window.location.origin + "/static/app/" + app + "/" + file, function( data ) {
